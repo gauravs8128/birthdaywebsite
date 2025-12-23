@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Abhilasha ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background floating hearts -->
+    <div class="floating-hearts"></div>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="container">
+            <!-- Birthday Date -->
+            <div class="date-badge">
+                <i class="fas fa-calendar-heart"></i>
+                <span>December 23rd</span>
+            </div>
+
+            <!-- Main Birthday Text -->
+            <div class="birthday-main">
+                <h1 class="happy">Happy Birthday</h1>
+                <h1 class="name">Abhilasha</h1>
+                <div class="heart-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+
+            <!-- Message -->
+            <div class="simple-message">
+                <p>On your special day, just wanted to make something for you</p>
+                <div class="signature">- Gaurav</div>
+            </div>
+
+            <!-- Button -->
+            <button class="letter-btn" onclick="showPage('letter')">
+                <i class="fas fa-envelope"></i> Letter For You
+            </button>
+
+            <!-- Navigation -->
+            <div class="main-nav">
+                <button onclick="showPage('home')"><i class="fas fa-home"></i></button>
+                <button onclick="showPage('letter')"><i class="fas fa-heart"></i></button>
+                <button onclick="showPage('music')"><i class="fas fa-music"></i></button>
+                <button onclick="showPage('photos')"><i class="fas fa-images"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Letter Page -->
+    <div id="letter" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <h2 class="page-title">For You</h2>
+
+            <div class="letter-wrapper">
+                <!-- Envelope -->
+                <div class="envelope" onclick="openLetter()">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <i class="fas fa-heart"></i>
+                        <p>Tap to open</p>
+                    </div>
+                </div>
+
+                <!-- Letter Content -->
+                <div class="letter-inside" id="letterContent">
+                    <div class="letter-paper">
+                        <div class="letter-text">
+                            <p>Hi Abhilasha,</p>
+
+                            <p>Happy Birthday! 🎂</p>
+
+                            <p>I wanted to make something special for your day. This is just a small way to say...</p>
+
+                            <p>You're genuinely amazing. The way you smile, the way you talk about things you care
+                                about, the little things that make you... you.</p>
+
+                            <p>I'm really glad I get to know you.</p>
+
+                            <p>Hope your day is as wonderful as you are. May this year bring you everything you're
+                                hoping for.</p>
+
+                            <p>Just enjoy your special day, okay?</p>
+
+                            <div class="letter-end">
+                                <p>Take care,</p>
+                                <p class="sign">Gaurav</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Page -->
+    <div id="music" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <h2 class="page-title">Our Song</h2>
+
+            <div class="music-player-section">
+                <div class="music-visual">
+                    <div class="vinyl-record">
+                        <div class="vinyl-center">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="music-title">
+                        <h3>Tum Se Hi</h3>
+                        <p>From Jab We Met</p>
+                    </div>
+                </div>
+
+                <div class="player-controls">
+                    <button class="control-btn" id="playBtn" aria-label="Play">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="control-btn" id="pauseBtn" style="display:none;" aria-label="Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+
+                    <div class="volume-control">
+                        <i class="fas fa-volume-down"></i>
+                        <input type="range" id="volumeSlider" min="0" max="100" step="1" value="70" aria-label="Volume">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                </div>
+
+                <!-- Audio element - plays the song file (hidden) -->
+                <audio id="musicAudio" preload="auto" style="display:none;">
+                    <source src="Tum Se Hi Jab We Met 320 Kbps.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+
+                <div class="song-message">
+                    <i class="fas fa-music"></i>
+                    <p>A song that reminds me of good moments</p>
+                </div>
+            </div>
+
+            <!-- Animated music notes -->
+            <div class="music-notes">
+                <div class="note">♪</div>
+                <div class="note">♫</div>
+                <div class="note">♪</div>
+                <div class="note">♫</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photos Page -->
+    <div id="photos" class="page">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <h2 class="page-title">Beautiful Moments</h2>
+
+            <div class="birthday-wish">
+                <i class="fas fa-birthday-cake"></i>
+                <p>Hope your birthday is filled with happy moments</p>
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <!-- Photo Carousel -->
+            <div class="photo-carousel">
+                <div class="carousel-container">
+                    <!-- Photos will be added here by JavaScript -->
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="prevPhoto()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" onclick="nextPhoto()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Photo navigation dots -->
+                <div class="photo-dots" id="photoDots">
+                    <!-- Dots will be added by JavaScript -->
+                </div>
+
+                <!-- Instruction -->
+                <div class="photo-instruction">
+                    <i class="fas fa-hand-point-up"></i>
+                    <span>Click arrows or dots to see all photos</span>
+                </div>
+            </div>
+
+            <div class="photo-counter">
+                <span id="currentPhoto">1</span> / <span id="totalPhotos">6</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="simple-footer">
+        <p>Made for Abhilasha's special day</p>
+    </div>
+
+    <!-- Hidden Audio -->
+    <audio id="birthdayAudio" loop>
+        <!-- We'll handle this in JavaScript -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
